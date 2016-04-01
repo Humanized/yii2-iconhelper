@@ -1,41 +1,23 @@
 {
 
-    "name": "humanized/yii2-icon-helper",
-
+    "name": "humanized/yii2-iconhelper",
     "description": "Helper function to link icons to model entries in a database",
-
     "type": "yii2-extension",
-
-    "keywords": ["yii2","extension"],
-
+    "keywords": ["yii2","helpers","icons","gui","database"],
     "license": "GPL-3.0",
-
     "authors": [
-
         {
-
             "name": "Jeffrey ",
-
             "email": "jeffrey@humanized.be"
-
         }
-
     ],
-
     "require": {
-
         "yiisoft/yii2": "2.0.7"
-
     },
 
     "autoload": {
-
         "psr-4": {
-
-            "\\humanized\\iconhelper\\" 
-
+            "\humanized\\iconhelper\\" 
         }
-
     }
-
 }
