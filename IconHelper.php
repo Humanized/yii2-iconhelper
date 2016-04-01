@@ -1,14 +1,27 @@
 <?php
 
-namespace \\humanized\\iconhelper\;
+namespace humanized\iconhelper;
 
-/**
- * This is just an example.
- */
-class AutoloadExample extends \yii\base\Widget
+use yii\base\Model;
+use kartik\helpers\Html;
+
+class IconHelper
 {
-    public function run()
+
+    /**
+     * 
+     * @param type $name
+     * @param array $config
+     */
+    public static function getIcon($input, array $config = [])
     {
-        return "Hello!";
+        //Lookup DB Value corresponding to input
+        $model = models\icons\IconRegister::findOne(['name' => $input]);
+
+        if (!isset($model) || $model->framework_id == 'bdg') {
+            return Html::badge($input, $config);
+        }
+        return Html::icon($icon, $config, ($model->framework_id == 'bsg' ? 'glyphicon glyphicon-' : 'fa fa-'));
     }
+
 }
