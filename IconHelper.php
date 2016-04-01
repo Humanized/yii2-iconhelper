@@ -18,11 +18,13 @@ class IconHelper
 
         //Lookup DB Value corresponding to input
         $model = models\IconRegister::findOne(['name' => $input]);
-
+        $badge = NULL;
         if (!isset($model) || $model->framework_id == 'bdg') {
-            return Html::badge(isset($model) ? $model->icon : $input, $config);
+            $badge = isset($model) ? $model->icon : $input;
+        } else {
+            $badge = Html::icon($model->icon, $config, ($model->framework_id == 'bsg' ? 'glyphicon glyphicon-' : 'fa fa-'));
         }
-        return Html::badge(Html::icon($model->icon, $config, ($model->framework_id == 'bsg' ? 'glyphicon glyphicon-' : 'fa fa-'))) . (isset($config['label']) ? ' ' . $config['label'] : '');
+        return Html::badge($badge, $config) . (isset($config['label']) ? ' ' . $config['label'] : '');
     }
 
 }
