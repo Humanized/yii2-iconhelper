@@ -1,6 +1,6 @@
 <?php
 
-namespace humanized\iconhelper\models\icons;
+namespace humanized\iconhelper\models;
 
 use Yii;
 
