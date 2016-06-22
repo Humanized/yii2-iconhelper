@@ -23,7 +23,7 @@ class IconHelper
             $icon = isset($model) ? $model->icon : $input;
             $config['as_badge'] = TRUE;
         } else {
-            $icon = Html::icon($model->icon, $config, ($model->framework_id == 'bsg' ? 'glyphicon glyphicon-' : 'fa fa-'));
+            $icon = Html::icon($model->icon, $config, ($model->framework_id == 'bsg' ? 'glyphicon glyphicon-' : 'fa fa-fw fa-'));
         }
 
 
