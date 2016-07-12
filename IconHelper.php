@@ -28,10 +28,12 @@ class IconHelper
 
 
         $output = $icon;
+
         if (isset($config['as_badge']) && $config['as_badge'] == TRUE) {
-            $output = Html::badge($output, $config);
+
+            $output = Html::badge($output . ' ' . (isset($config['label']) && isset($config['label_as_badge']) ? $config['label'] : ''), $config);
         }
-        $label = (isset($config['label']) ? ' ' . $config['label'] : '');
+        $label = (isset($config['label']) && !isset($config['label_as_badge']) ? ' ' . $config['label'] : '');
         return $output . $label;
     }
 
